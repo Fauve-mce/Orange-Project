@@ -1,26 +1,26 @@
-// Gestion du formulaire de consentement
+// CONSENT FORM HANDELING
 document.querySelector('#consent-form form').addEventListener('submit', function (e) {
-  e.preventDefault(); // Empêche la soumission du formulaire
+  e.preventDefault(); 
   localStorage.setItem('consentGiven', true); // Enregistre le consentement dans le localStorage
-  alert('Consentement enregistré avec succès !'); // Confirmation pour l'utilisateur
+  alert('Consentement enregistré avec succès !'); 
 
-  // Afficher le formulaire des contacts après le consentement
+  // DISPLAY CONTACT FORM
   document.querySelector('#contact-form').style.display = 'block';
   document.querySelector('#consent-form').style.display = 'none'; // Masquer le formulaire de consentement
 });
 
-// Gestion du formulaire de contacts
+// CONTACT FORM HANDELING
 document.querySelector('#contact-form form').addEventListener('submit', function (e) {
-  e.preventDefault(); // Empêche la soumission du formulaire
+  e.preventDefault(); // 
 
-  // Récupération des valeurs des champs d'e-mails
+  // EMAIL HANDELING
   const emails = [
     document.querySelector('#email1').value,
     document.querySelector('#email2').value,
     document.querySelector('#email3').value
   ];
 
-  // Stockage des e-mails dans le localStorage
+  // STOCKING EMAILS IN LOCAL STORAGE
   localStorage.setItem('contacts', JSON.stringify(emails));
   alert('Contacts enregistrés avec succès !');
 });
