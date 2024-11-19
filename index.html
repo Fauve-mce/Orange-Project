@@ -9,67 +9,73 @@
 
 <body>
 
-    
-    <section id="consent-form">
-        <form action="/submit-consent" method="post">
-            <h2>Consentement pour la localisation GPS</h2>
-            <p>
-                En cochant cette case, j'accepte que ma localisation GPS soit utilisée pour informer mes contacts en
-                cas de besoin.
-            </p>
-            <label>
-                <input type="checkbox" name="gps-consent" required>
-                J'accepte les termes et conditions
-            </label>
-            <br>
-            <button type="submit">Continuer</button>
-        </form>
-    </section>
+   
+    <div class="container">
+        <section id="consent-form">
+            <form method="post">
+                <h2>Consentement pour la localisation GPS</h2>
+                <p>
+                    En cochant cette case, j'accepte que ma localisation GPS soit utilisée pour informer mes contacts en
+                    cas de besoin.
+                </p>
+                <label>
+                    <input type="checkbox" name="gps-consent" required>
+                    J'accepte les termes et conditions
+                </label>
+                <br>
+                <button type="submit">Continuer</button>
+            </form>
+        </section>
+    </div>
 
-    
-    <section id="contact-form">
-        <form action="/save-contacts" method="post">
-            <h2>Enregistrement des contacts</h2>
-            <p>Veuillez entrer jusqu'à trois adresses e-mail pour alerter vos contacts en cas d'urgence.</p>
+   
+    <div class="container">
+        <section id="contact-form">
+            <form method="post">
+                <h2>Enregistrement des contacts</h2>
+                <p>Veuillez entrer jusqu'à trois adresses e-mail pour alerter vos contacts en cas d'urgence.</p>
 
-            <label for="email1">Contact 1 :</label>
-            <input type="email" id="email1" name="email1" placeholder="Adresse e-mail" required>
-            <br>
+                <label for="email1">Contact 1 :</label>
+                <input type="email" id="email1" name="email1" placeholder="Adresse e-mail" required>
+                <br>
 
-            <label for="email2">Contact 2 :</label>
-            <input type="email" id="email2" name="email2" placeholder="Adresse e-mail">
-            <br>
+                <label for="email2">Contact 2 :</label>
+                <input type="email" id="email2" name="email2" placeholder="Adresse e-mail">
+                <br>
 
-            <label for="email3">Contact 3 :</label>
-            <input type="email" id="email3" name="email3" placeholder="Adresse e-mail">
-            <br>
+                <label for="email3">Contact 3 :</label>
+                <input type="email" id="email3" name="email3" placeholder="Adresse e-mail">
+                <br>
 
-            <button type="submit">Enregistrer</button>
-        </form>
-    </section>
+                <button type="submit">Enregistrer</button>
+            </form>
+        </section>
+    </div>
 
-    
-    <section id="email-consent-form">
-        <form action="/email-consent" method="post">
-            <h2>Donnez votre accord pour être contacté</h2>
-            <p>
-                En fournissant votre adresse e-mail, vous acceptez d'être contacté(e) en cas d'urgence pour aider une
-                personne âgée.
-            </p>
+   
+    <div class="container">
+        <section id="email-consent-form">
+            <form method="post">
+                <h2>Donnez votre accord pour être contacté</h2>
+                <p>
+                    En fournissant votre adresse e-mail, vous acceptez d'être contacté(e) en cas d'urgence pour aider une
+                    personne âgée.
+                </p>
 
-            <label for="consent-email">Adresse e-mail :</label>
-            <input type="email" id="consent-email" name="consent-email" placeholder="Adresse e-mail" required>
-            <br>
+                <label for="consent-email">Adresse e-mail :</label>
+                <input type="email" id="consent-email" name="consent-email" placeholder="Adresse e-mail" required>
+                <br>
 
-            <label>
-                <input type="checkbox" name="email-consent" required>
-                J'accepte de fournir mon adresse e-mail pour être contacté(e) en cas d'urgence.
-            </label>
-            <br>
+                <label>
+                    <input type="checkbox" name="email-consent" required>
+                    J'accepte de fournir mon adresse e-mail pour être contacté(e) en cas d'urgence.
+                </label>
+                <br>
 
-            <button type="submit">Envoyer</button>
-        </form>
-    </section>
+                <button type="submit">Envoyer</button>
+            </form>
+        </section>
+    </div>
 
 </body>
 
