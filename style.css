@@ -94,8 +94,9 @@ input[type="checkbox"] + label {
 }
 
 #contact-form,
-#email-consent-form,
-#phone-number-section{
+#email-sent,
+#phone-number-section,
+#registration-complete{
     display: none;
 }
 
