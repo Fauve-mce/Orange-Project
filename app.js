@@ -7,16 +7,28 @@ document.querySelector('#consent-form form').addEventListener('submit', function
   localStorage.setItem('consentGiven', true); // Store consent in Local Storage
   alert('Consentement enregistré avec succès !'); 
 
-  // DISPLAY CONTACT FORM
-  document.querySelector('#contact-form').style.display = 'block';
+  // DISPLAY PHONE NUMBER FORM
+  document.querySelector('#phone-number-section').style.display = 'block';
   document.querySelector('#consent-form').style.display = 'none'; // Hide consent form
 });
+
+//PHONE NUMBER HANDELING
+document.querySelector('#phone-number-section form').addEventListener('submit', function (e) {
+  e.preventDefault(); 
+  localStorage.setItem('phoneNumber', document.querySelector('#phone-number').value); // Store number in Local Storage
+  alert('Numéro enregistré avec succès !'); 
+
+  // DISPLAY CONTACT FORM
+  document.querySelector('#phone-number-section').style.display = 'none'; // Hide Phone section form
+  document.querySelector('#contact-form').style.display = 'block'; 
+});
+
 
 // CONTACT FORM HANDELING
 document.querySelector('#contact-form form').addEventListener('submit', function (e) {
  e.preventDefault();
 
-  // EMAIL HANDELING
+  
   const emails = [
     document.querySelector('#email1').value,
     document.querySelector('#email2').value,
@@ -26,6 +38,9 @@ document.querySelector('#contact-form form').addEventListener('submit', function
   // STOCKING EMAILS IN LOCAL STORAGE
   localStorage.setItem('contacts', JSON.stringify(emails));
   alert('Contacts enregistrés avec succès !');
+
+  document.querySelector('#contact-form').style.display = 'none'
+
 });
 
 
@@ -149,6 +164,6 @@ function sendAlert() {
 
 // LAUNCHES THE FUNCTION EVERY 4 HOURS
 /* setInterval(fetchPosition, 4 * 60 * 60 * 1000); */
+
 fetchPosition()
-fetchPosition()
-fetchPosition()
+
