@@ -1,8 +1,8 @@
 localStorage.clear();
 
 //LET'S GET STARTED
-document.querySelector('#introduction').addEventListener('submit', function (e) {
-  e.preventDefault(); 
+document.querySelector('#introduction button').addEventListener('click', function () {
+   
 
   // DISPLAY CONSENT FORM
   document.querySelector('#consent-form').style.display = 'block';
@@ -25,17 +25,26 @@ document.querySelector('#consent-form form').addEventListener('submit', function
 document.querySelector('#phone-number-section form').addEventListener('submit', function (e) {
   e.preventDefault(); 
   localStorage.setItem('phoneNumber', document.querySelector('#phone-number').value); // Store number in Local Storage
-  alert('Numéro enregistré avec succès !'); 
+  
 
   //DISPLAY NUMBER VERIFICATION
+  document.querySelector('#phone-number-section').style.display = 'none'; // Hide Phone section form
+  document.querySelector('#phone-verification-section').style.display = 'block'; 
+});
 
-  //PHONE VERIFICATION HANDELING
-
+// NUMBER VERIFICATION HANDELING
+document.querySelector('#phone-verification-section form').addEventListener('submit', function (e) {
+  e.preventDefault(); 
+  localStorage.setItem('verifiedNumber', true); // Store number in Local Storage
+  alert('Numéro enregistré avec succès !'); 
 
   // DISPLAY CONTACT FORM
-  document.querySelector('#phone-number-section').style.display = 'none'; // Hide Phone section form
+  document.querySelector('#phone-verification-section').style.display = 'none'; // Hide Phone section form
   document.querySelector('#contact-form').style.display = 'block'; 
 });
+
+
+
 
 
 // CONTACT FORM HANDELING
