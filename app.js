@@ -1,4 +1,4 @@
-// DOM VARIABLES
+localStorage.clear();
 
 
 // CONSENT FORM HANDELING
@@ -39,9 +39,27 @@ document.querySelector('#contact-form form').addEventListener('submit', function
   localStorage.setItem('contacts', JSON.stringify(emails));
   alert('Contacts enregistrés avec succès !');
 
+  document.querySelector('#email-sent').style.display = 'block' //Displays Mail sent message
   document.querySelector('#contact-form').style.display = 'none'
 
+
+  setTimeout(() => {   //Timeout that simulates the received concent from contact
+    
+    document.querySelector('#email-sent').style.display = 'none'; 
+    document.querySelector('#registration-complete').style.display = 'block'; //Displays consent received
+    localStorage.setItem('consentReceived', true);
+}, 10000);
+  
+//LOCAL STORAGE VARIABLES
+const localConsentGiven = JSON.parse(localStorage.getItem('consentGiven'));
+console.log(localConsentGiven);
+  const localConsentReceived = JSON.parse(localStorage.getItem('consentReceived'));
+console.log(localConsentReceived);
+
+
+
 });
+
 
 
 //FUNCTION TO FETCH POSITION
@@ -164,6 +182,9 @@ function sendAlert() {
 
 // LAUNCHES THE FUNCTION EVERY 4 HOURS
 /* setInterval(fetchPosition, 4 * 60 * 60 * 1000); */
+
+//VARIABLES FOR LOCAL STORAGE
+
 
 fetchPosition()
 
