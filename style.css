@@ -94,9 +94,12 @@ input[type="checkbox"] + label {
 }
 
 #contact-form,
-#email-consent-form{
+#email-consent-form,
+#phone-number-section{
     display: none;
 }
+
+#phone-number-section
 
 @media (max-width: 600px) {
     .container {
