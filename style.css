@@ -93,6 +93,10 @@ input[type="checkbox"] + label {
     cursor: pointer;
 }
 
+#contact-form,
+#email-consent-form{
+    display: none;
+}
 
 @media (max-width: 600px) {
     .container {

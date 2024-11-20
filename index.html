@@ -10,9 +10,23 @@
 
 <body>
 
-   
-    <div class="container">
-        <section id="consent-form">
+    <section id="phone-number-section">
+        <div class="container">
+            <form method="post">
+                <h2>Entrer votre numéro</h2>
+                <p>Veuillez entrer votre numéro de téléphone pour être contacté(e) en cas d'urgence.</p>
+                <label for="phone-number">Numéro de téléphone :</label>
+                <input type="tel" id="phone-number" name="phone-number" placeholder="+33699901032" required>
+                <br>
+                <button type="submit">Enregistrer</button>
+            </form>
+        </div>
+    </section>
+    
+    
+    
+    <section id="consent-form">
+        <div class="container">
             <form method="post">
                 <h2>Consentement pour la localisation GPS</h2>
                 <p>
@@ -26,12 +40,12 @@
                 <br>
                 <button type="submit">Continuer</button>
             </form>
-        </section>
-    </div>
+        </div>
+    </section>
 
-   
-    <div class="container">
-        <section id="contact-form">
+    
+    <section id="contact-form">
+        <div class="container">
             <form method="post">
                 <h2>Enregistrement des contacts</h2>
                 <p>Veuillez entrer jusqu'à trois adresses e-mail pour alerter vos contacts en cas d'urgence.</p>
@@ -50,12 +64,12 @@
 
                 <button type="submit">Enregistrer</button>
             </form>
-        </section>
-    </div>
+        </div>
+    </section>
 
-   
-    <div class="container">
-        <section id="email-consent-form">
+    
+    <section id="email-consent-form">
+        <div class="container">
             <form method="post">
                 <h2>Donnez votre accord pour être contacté</h2>
                 <p>
@@ -75,8 +89,8 @@
 
                 <button type="submit">Envoyer</button>
             </form>
-        </section>
-    </div>
+        </div>
+    </section>
     
     <script src="script.js"></script>
 
