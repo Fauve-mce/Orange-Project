@@ -1,5 +1,14 @@
 localStorage.clear();
 
+//LET'S GET STARTED
+document.querySelector('#introduction').addEventListener('submit', function (e) {
+  e.preventDefault(); 
+
+  // DISPLAY CONSENT FORM
+  document.querySelector('#consent-form').style.display = 'block';
+  document.querySelector('#introduction').style.display = 'none'; // Hide consent form
+});
+
 
 // CONSENT FORM HANDELING
 document.querySelector('#consent-form form').addEventListener('submit', function (e) {
@@ -17,6 +26,11 @@ document.querySelector('#phone-number-section form').addEventListener('submit', 
   e.preventDefault(); 
   localStorage.setItem('phoneNumber', document.querySelector('#phone-number').value); // Store number in Local Storage
   alert('Numéro enregistré avec succès !'); 
+
+  //DISPLAY NUMBER VERIFICATION
+
+  //PHONE VERIFICATION HANDELING
+
 
   // DISPLAY CONTACT FORM
   document.querySelector('#phone-number-section').style.display = 'none'; // Hide Phone section form
@@ -53,7 +67,7 @@ document.querySelector('#contact-form form').addEventListener('submit', function
 //LOCAL STORAGE VARIABLES
 const localConsentGiven = JSON.parse(localStorage.getItem('consentGiven'));
 console.log(localConsentGiven);
-  const localConsentReceived = JSON.parse(localStorage.getItem('consentReceived'));
+const localConsentReceived = JSON.parse(localStorage.getItem('consentReceived'));
 console.log(localConsentReceived);
 
 
