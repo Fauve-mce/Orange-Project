@@ -10,6 +10,7 @@
 
 <body>
 
+    
     <section id="phone-number-section">
         <div class="container">
             <form method="post">
@@ -22,8 +23,7 @@
             </form>
         </div>
     </section>
-    
-    
+
     
     <section id="consent-form">
         <div class="container">
@@ -68,30 +68,26 @@
     </section>
 
     
-    <section id="email-consent-form">
+    <section id="email-sent">
         <div class="container">
-            <form method="post">
-                <h2>Donnez votre accord pour être contacté</h2>
-                <p>
-                    En fournissant votre adresse e-mail, vous acceptez d'être contacté(e) en cas d'urgence pour aider une
-                    personne âgée.
-                </p>
-
-                <label for="consent-email">Adresse e-mail :</label>
-                <input type="email" id="consent-email" name="consent-email" placeholder="Adresse e-mail" required>
-                <br>
-
-                <label>
-                    <input type="checkbox" name="email-consent" required>
-                    J'accepte de fournir mon adresse e-mail pour être contacté(e) en cas d'urgence.
-                </label>
-                <br>
-
-                <button type="submit">Envoyer</button>
-            </form>
+            <h2>Mail envoyé</h2>
+            <p>
+                Un mail a été envoyé à vos personnes de contact. Votre inscription sera validée lorsque les personnes
+                auront consenti.
+            </p>
         </div>
     </section>
+
     
+    <section id="registration-complete">
+        <div class="container">
+            <h2>Contacts confirmés</h2>
+            <p>
+                Inscription finalisée. Bienvenue chez BeSafe !
+            </p>
+        </div>
+    </section>
+
     <script src="app.js"></script>
 
 </body>
