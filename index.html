@@ -10,6 +10,18 @@
 
 <body>
 
+
+
+    <secton id="introduction">
+        <div class="container">
+            <div class="intro">
+                    <img src="images/logo-BeSafe.png">
+                <p>Pour votre sécurité et celle de vos proches</p>
+                <button id="start">Démarrer</button>
+            </div>
+        </div>
+    </secton>
+   
     
     <section id="phone-number-section">
         <div class="container">
@@ -43,7 +55,20 @@
         </div>
     </section>
 
-    
+       
+    <section id="phone-verification-section">
+        <div class="container">
+            <form method="post">
+                    <h2>Vérification du numéro</h2>
+                    <p>Un code de vérification à 6 chiffres a été envoyé à votre numéro. Veuillez le saisir ci-dessous.</p>
+                    <label for="verification-code">Code de vérification :</label>
+                    <input type="text" id="verification-code" name="verification-code" maxlength="6" placeholder="123456" required>
+                    <br>
+                    <button type="submit">Vérifier</button>
+            </form>
+        </div>
+    </section>
+
     <section id="contact-form">
         <div class="container">
             <form method="post">

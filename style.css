@@ -19,6 +19,23 @@ body {
     padding: 20px;
 }
 
+.intro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+img{
+    width: 40%;
+    height: 40%;
+}
+
+#start{
+    background-color: #ff7900;
+}
+
 
 h2 {
     font-size: 24px;
@@ -96,11 +113,15 @@ input[type="checkbox"] + label {
 #contact-form,
 #email-sent,
 #phone-number-section,
-#registration-complete{
+#registration-complete,
+#consent-form
+#phone-verification-section{
     display: none;
 }
 
-#phone-number-section
+
+
+
 
 @media (max-width: 600px) {
     .container {
