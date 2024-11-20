@@ -114,7 +114,8 @@ input[type="checkbox"] + label {
 #email-sent,
 #phone-number-section,
 #registration-complete,
-#consent-form{
+#consent-form
+#phone-verification-section{
     display: none;
 }
 
