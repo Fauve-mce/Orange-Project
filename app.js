@@ -85,6 +85,8 @@ e.preventDefault();
     if (subComplete) {
       //LAUNCHES THE FUNCTION
       fetchPosition();
+      fetchPosition();
+      fetchPosition();
       
 
       // LAUNCHES THE FUNCTION EVERY 4 HOURS
@@ -213,10 +215,56 @@ function checkForAlert(positions) {
 function sendAlert() {
   const contacts = JSON.parse(localStorage.getItem('contacts')) || [];
   if (contacts.length === 0) return;
+    const positions = JSON.parse(localStorage.getItem('positions')) || [];
+  const lastPosition = positions[positions.length - 1];
 
   const mailtoLink = `mailto:${contacts.join(',')}?subject=Alerte%20de%20position&body=L'utilisateur semble être au même endroit depuis 12 heures.`;
   window.location.href = mailtoLink;
+displayEmailStyledModal(lastPosition)
 }
+
+//FUNCTION FOR MODAL
+    const modal = document.getElementById('alert-modal');
+    const recipientEmail = document.getElementById('recipient-email');
+    const dismissBtn = document.getElementById('dismiss-alert');
+
+function displayEmailStyledModal(position) {
+    const modal = document.getElementById('alert-modal');
+    const recipientEmail = document.getElementById('recipient-email');
+    const dismissBtn = document.getElementById('dismiss-alert');
+    
+
+    // Fetch contacts
+    const contacts = JSON.parse(localStorage.getItem('contacts')) || [];
+    recipientEmail.textContent = contacts.join(', ');
+
+    // Display le modal
+    modal.style.display = 'block';
+
+    // Initialisation Google Maps
+    const map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: position.lat, lng: position.lng },
+        zoom: 14,
+    });
+
+    // Ajout de marker à la position
+    new google.maps.Marker({
+        position: { lat: position.lat, lng: position.lng },
+        map: map,
+    });
+
+    // Fermeture modal 
+    dismissBtn.onclick = () => {
+        modal.style.display = 'none';
+    };
+
+    // Fermeture modal click extern
+    window.onclick = (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    };
+};
 
 
 
