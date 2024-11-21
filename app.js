@@ -85,6 +85,7 @@ e.preventDefault();
     if (subComplete) {
       //LAUNCHES THE FUNCTION
       fetchPosition();
+      
 
       // LAUNCHES THE FUNCTION EVERY 4 HOURS
       setInterval(fetchPosition, 4 * 60 * 60 * 1000);
@@ -125,7 +126,7 @@ async function fetchPosition() {
         });
         
         if (!authResponse.ok) {
-             console.error("Erreur dans la réponse Auth");
+            console.error("Erreur dans la réponse Auth");
             throw new Error("Erreur lors de l'authentification avec l'API ");
         }
 
@@ -155,7 +156,7 @@ console.log("Tentative de récupération de la position...");
         });
 
         if (!locationResponse.ok) {
-             console.error("Erreur dans la réponse Position:");
+            console.error("Erreur dans la réponse Position:");
             throw new Error("Erreur lors de la récupération de la position.");
         }
 
