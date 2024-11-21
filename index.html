@@ -12,9 +12,12 @@
 <body>
 
     <header class="header">
+        <div class="container">
         <div class="top-bar">
+            <div class="header-left">
             <div class="logo"><img src="./apple-touch-icon.png"></div>
             <input type="text" placeholder="Rechercher sur Orange..." class="search-bar">
+            </div>
             <nav class="menu">
                 <a href="#">News</a>
                 <a href="#">Aide et contact</a>
@@ -22,33 +25,37 @@
             </nav>
         </div>
         <nav class="main-menu">
+            
             <ul>
                 <li><a href="#">Téléphones et forfaits</a></li>
                 <li><a href="#">Internet</a></li>
                 <li><a href="#">Internet + Mobile</a></li>
                 <li><a href="#">TV, Musique et Jeux</a></li>
-                <li><a href="#" class="active">Cybersécurité et Télésurveillance</a></li>
+                <li><a href="#" >Cybersécurité et Télésurveillance</a></li>
                 <li><a href="#">Black Friday</a></li>
+                <li><a href="#">Conseils et ateliers</a></li>
             </ul>
-            <a href="#">Conseils et ateliers</a></li>
+            
+            
         </nav>
+        </div>
     </header>
 
     <section id="introduction">
         <div class="container">
             <div class="intro">
                 <section class="hero-section">
-                    <h1>sécurité personnelle</h1>
+                    <h1>Sécurité pour vos proches</h1>
                     <div class="text">
                         <p>
                             <span class="orange-text">Orange</span> vous accompagne avec BeSafe, <br> une solution innovante pour veiller sur vos proches et renforcer leur sécurité, tout en simplicité.
                         </p>
                     </div>
-                    <div class="content">
+                    
                         <div class="image-section">
-                            <img src="./GrandMa.svg" alt="Family Illustration">
+                            <img src="GrandMa.svg" alt="Family Illustration">
                         </div>
-                    </div>
+                    
                 </section>
             
                 <section id="box-cards">
@@ -56,19 +63,21 @@
                         <h1> La tranquillité d'esprit à portée de main.</h1>
                         <div class="content-card">
                             <div class="card">
-                                <p>suivi non intrusif pour veiller sur les proches vulnérables, ou les personnes âgées, isolées.</p>
+                                <img src="pin marker.jpg">
+                                <h1>Veillez sur vos proches sans intrusion</h1>
+                                <p>Recevez une alerte si une détresse est suspectée</p>
                             </div>
                             <div class="card">
                                 <div class="assistance">
-                                    <img src="./assistance-icon.png">
-                                    <h1>On vous guide et vous accompagne</h1>
+                                    <img src="assistance-icon.png">
+                                    <h1>Nous vous guidons et vous accompagnons</h1>
                                     <p>Assistance 24/7 via une ligne d'urgence</p>
                                 </div>
                             </div>
                             <div class="card">
                                 <div class="montre">
-                                    <img src="./montre-watch.png">
-                                    <h1>dispositifs connectés</h1>
+                                    <img src="montre-watch.png">
+                                    <h1>Dispositifs connectés</h1>
                                     <p>Intégration avec des dispositifs connectés <br> (bracelets ou montres avec capteurs de chute et santé)</p>
                                 </div>
                             </div>
@@ -76,7 +85,7 @@
                         <!-- <button id="start-simulation">Faire une simulation</button> -->
                     </div>
                 </section>
-                    <img src="logo-BeSafe.png">
+                    <img src="logo-BeSafe.png" class="besafelogo">
                 <p>Pour votre sécurité et celle de vos proches</p>
                 <button type="submit">Démarrer</button>
             </div>
@@ -190,10 +199,10 @@
             </div>
         </div>
     </div>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMkh_nNxjlttLwTBt_LGCkcUgHQ0If5UU" async defer></script>
-    <script src="app.js"></script>
+    
 
     <footer class="footer">
+        <div class="container">
         <!-- Première ligne -->
         <div class="footer-top">
             <div class="footer-links">
@@ -209,11 +218,11 @@
         <!-- Deuxième ligne -->
         <div class="footer-middle">
             <div class="footer-apps">
-                <a href="#"><img src="appstore.png" alt="Télécharger sur l'App Store"></a>
-                <a href="#"><img src="googleplay.png" alt="Disponible sur Google Play"></a>
+                <a href="#"><img src="" alt="Télécharger sur l'App Store"></a>
+                <a href="#"><img src="" alt="Disponible sur Google Play"></a>
             </div>
             <div class="footer-award">
-                <img src="label2025.png" alt="Élu service client de l'année 2025">
+                <img src="" alt="Élu service client de l'année 2025">
                 <p>Orange Élu service client de l'année 2025<br>
                     Étude BVA Xsight - Viséo CI - Plus d'infos sur escda.fr</p>
             </div>
@@ -231,7 +240,11 @@
             </div>
             <div class="footer-copyright">© Orange 2024</div>
         </div>
+        </div>
     </footer>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMkh_nNxjlttLwTBt_LGCkcUgHQ0If5UU" async defer></script>
+    <script src="app.js"></script>
 </body>
 
 </html>

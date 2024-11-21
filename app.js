@@ -5,7 +5,7 @@ document.querySelector('#introduction button').addEventListener('click', functio
    
 
   // DISPLAY CONSENT FORM
-  document.querySelector('#consent-form').style.display = 'block';
+  document.querySelector('#consent-form').style.display = 'flex';
   document.querySelector('#introduction').style.display = 'none'; // Hide consent form
 });
 
@@ -17,7 +17,7 @@ document.querySelector('#consent-form form').addEventListener('submit', function
 
 
   // DISPLAY PHONE NUMBER FORM
-  document.querySelector('#phone-number-section').style.display = 'block';
+  document.querySelector('#phone-number-section').style.display = 'flex';
   document.querySelector('#consent-form').style.display = 'none'; // Hide consent form
 });
 
@@ -29,7 +29,7 @@ document.querySelector('#phone-number-section form').addEventListener('submit', 
 
   //DISPLAY NUMBER VERIFICATION
   document.querySelector('#phone-number-section').style.display = 'none'; // Hide Phone section form
-  document.querySelector('#phone-verification-section').style.display = 'block'; 
+  document.querySelector('#phone-verification-section').style.display = 'flex'; 
 });
 
 // NUMBER VERIFICATION HANDELING
@@ -41,7 +41,7 @@ document.querySelector('#phone-verification-section form').addEventListener('sub
 
   // DISPLAY CONTACT FORM
   document.querySelector('#phone-verification-section').style.display = 'none'; // Hide Phone section form
-  document.querySelector('#contact-form').style.display = 'block'; 
+  document.querySelector('#contact-form').style.display = 'flex'; 
 });
 
 
@@ -63,14 +63,14 @@ e.preventDefault();
   localStorage.setItem('contacts', JSON.stringify(emails));
   alert('Contacts enregistrés avec succès !');
 
-  document.querySelector('#email-sent').style.display = 'block' //Displays Mail sent message
+  document.querySelector('#email-sent').style.display = 'flex' //Displays Mail sent message
   document.querySelector('#contact-form').style.display = 'none'
 
 
   setTimeout(() => {   //Timeout that simulates the received concent from contact
     
     document.querySelector('#email-sent').style.display = 'none'; 
-    document.querySelector('#registration-complete').style.display = 'block'; //Displays consent received
+    document.querySelector('#registration-complete').style.display = 'flex'; //Displays consent received
     localStorage.setItem('consentReceived', true);
     
     const localConsentReceived = JSON.parse(localStorage.getItem('consentReceived'));
