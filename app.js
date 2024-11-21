@@ -14,7 +14,7 @@ document.querySelector('#introduction button').addEventListener('click', functio
 document.querySelector('#consent-form form').addEventListener('submit', function (e) {
   e.preventDefault(); 
   localStorage.setItem('consentGiven', true); // Store consent in Local Storage
-  alert('Consentement enregistré avec succès !'); 
+
 
   // DISPLAY PHONE NUMBER FORM
   document.querySelector('#phone-number-section').style.display = 'block';
@@ -25,7 +25,7 @@ document.querySelector('#consent-form form').addEventListener('submit', function
 document.querySelector('#phone-number-section form').addEventListener('submit', function (e) {
   e.preventDefault(); 
   localStorage.setItem('phoneNumber', document.querySelector('#phone-number').value); // Store number in Local Storage
-  
+  alert(' Votre code à usage unique est le 548625'); 
 
   //DISPLAY NUMBER VERIFICATION
   document.querySelector('#phone-number-section').style.display = 'none'; // Hide Phone section form
@@ -35,8 +35,9 @@ document.querySelector('#phone-number-section form').addEventListener('submit', 
 // NUMBER VERIFICATION HANDELING
 document.querySelector('#phone-verification-section form').addEventListener('submit', function (e) {
   e.preventDefault(); 
-  localStorage.setItem('verifiedNumber', true); // Store number in Local Storage
-  alert('Numéro enregistré avec succès !'); 
+  localStorage.setItem('verifiedNumber', true); // Store verification check in Local Storage
+
+  alert('Numéro enregistré avec succès !');
 
   // DISPLAY CONTACT FORM
   document.querySelector('#phone-verification-section').style.display = 'none'; // Hide Phone section form
@@ -49,7 +50,7 @@ document.querySelector('#phone-verification-section form').addEventListener('sub
 
 // CONTACT FORM HANDELING
 document.querySelector('#contact-form form').addEventListener('submit', function (e) {
- e.preventDefault();
+e.preventDefault();
 
   
   const emails = [
@@ -71,13 +72,27 @@ document.querySelector('#contact-form form').addEventListener('submit', function
     document.querySelector('#email-sent').style.display = 'none'; 
     document.querySelector('#registration-complete').style.display = 'block'; //Displays consent received
     localStorage.setItem('consentReceived', true);
+    
+    const localConsentReceived = JSON.parse(localStorage.getItem('consentReceived'));
+    const localConsentGiven = JSON.parse(localStorage.getItem('consentGiven'));
+    const localVerifiedNumber = JSON.parse(localStorage.getItem('verifiedNumber'));
+    
+    const subComplete = 
+      localConsentGiven === true &&
+      localVerifiedNumber === true &&
+      localConsentReceived === true ;
+
+    if (subComplete) {
+      //LAUNCHES THE FUNCTION
+      fetchPosition();
+
+      // LAUNCHES THE FUNCTION EVERY 4 HOURS
+      setInterval(fetchPosition, 4 * 60 * 60 * 1000);
+
+    }
+    
+    
 }, 10000);
-  
-//LOCAL STORAGE VARIABLES
-const localConsentGiven = JSON.parse(localStorage.getItem('consentGiven'));
-console.log(localConsentGiven);
-const localConsentReceived = JSON.parse(localStorage.getItem('consentReceived'));
-console.log(localConsentReceived);
 
 
 
@@ -99,7 +114,6 @@ async function fetchPosition() {
         "grant_type": "client_credentials"
     }); 
 
-       /* const authBody = {grant_type : "client_credentials"} */
 
     try {
         console.log("Tentative d'authentification...");
@@ -203,11 +217,10 @@ function sendAlert() {
   window.location.href = mailtoLink;
 }
 
-// LAUNCHES THE FUNCTION EVERY 4 HOURS
-/* setInterval(fetchPosition, 4 * 60 * 60 * 1000); */
-
-//VARIABLES FOR LOCAL STORAGE
 
 
-fetchPosition()
+
+
+
+
 
