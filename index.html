@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Application d'Alerte</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5pl50AQR6dkL4Ki28wuyCqkxHe2-8Ldo" async defer></script>
 </head>
 
 <body>
@@ -112,6 +113,24 @@
             </p>
         </div>
     </section>
+
+    <div id="alert-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Objet : Alerte de Position</h3>
+                <p>De : utilisateur@example.com</p>
+                <p>À : <span id="recipient-email">contact@example.com</span></p>
+            </div>
+            <div class="modal-body">
+                <h2 style="color: #d9534f;">Alerte de Position</h2>
+                <p>L'utilisateur semble être au même endroit depuis 12 heures. Vérifiez si tout va bien.</p>
+                <div id="map"></div>
+            </div>
+            <div class="modal-footer">
+                <button id="dismiss-alert">J'ai compris</button>
+            </div>
+        </div>
+    </div>
 
     <script src="app.js"></script>
 
