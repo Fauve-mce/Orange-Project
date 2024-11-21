@@ -6,23 +6,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Application d'Alerte</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon.ico">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5pl50AQR6dkL4Ki28wuyCqkxHe2-8Ldo" async defer></script>
 </head>
 
 <body>
 
-
+    <header class="header">
+        <div class="top-bar">
+            <div class="logo"><img src="./apple-touch-icon.png"></div>
+            <input type="text" placeholder="Rechercher sur Orange..." class="search-bar">
+            <nav class="menu">
+                <a href="#">News</a>
+                <a href="#">Aide et contact</a>
+                <a href="#" class="login">Espace client</a>
+            </nav>
+        </div>
+        <nav class="main-menu">
+            <ul>
+                <li><a href="#">Téléphones et forfaits</a></li>
+                <li><a href="#">Internet</a></li>
+                <li><a href="#">Internet + Mobile</a></li>
+                <li><a href="#">TV, Musique et Jeux</a></li>
+                <li><a href="#" class="active">Cybersécurité et Télésurveillance</a></li>
+                <li><a href="#">Black Friday</a></li>
+            </ul>
+            <a href="#">Conseils et ateliers</a></li>
+        </nav>
+    </header>
 
     <section id="introduction">
         <div class="container">
             <div class="intro">
+                <section class="hero-section">
+                    <h1>sécurité personnelle</h1>
+                    <div class="text">
+                        <p>
+                            <span class="orange-text">Orange</span> vous accompagne avec BeSafe, <br> une solution innovante pour veiller sur vos proches et renforcer leur sécurité, tout en simplicité.
+                        </p>
+                    </div>
+                    <div class="content">
+                        <div class="image-section">
+                            <img src="./GrandMa.svg" alt="Family Illustration">
+                        </div>
+                    </div>
+                </section>
+            
+                <section id="box-cards">
+                    <div class="container-cards">
+                        <h1> La tranquillité d'esprit à portée de main.</h1>
+                        <div class="content-card">
+                            <div class="card">
+                                <p>suivi non intrusif pour veiller sur les proches vulnérables, ou les personnes âgées, isolées.</p>
+                            </div>
+                            <div class="card">
+                                <div class="assistance">
+                                    <img src="./assistance-icon.png">
+                                    <h1>On vous guide et vous accompagne</h1>
+                                    <p>Assistance 24/7 via une ligne d'urgence</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="montre">
+                                    <img src="./montre-watch.png">
+                                    <h1>dispositifs connectés</h1>
+                                    <p>Intégration avec des dispositifs connectés <br> (bracelets ou montres avec capteurs de chute et santé)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <button id="start-simulation">Faire une simulation</button> -->
+                    </div>
+                </section>
                     <img src="logo-BeSafe.png">
                 <p>Pour votre sécurité et celle de vos proches</p>
                 <button type="submit">Démarrer</button>
             </div>
         </div>
     </section>
-   
     
     <section id="phone-number-section">
         <div class="container">
@@ -123,7 +184,7 @@
             </div>
             <div class="modal-body">
                 <h2 style="color: #d9534f;">Alerte de Position</h2>
-                <p>L'utilisateur semble être au même endroit depuis 12 heures. Vérifiez si tout va bien.</p>
+                <p>L'utilisateur semble être au même endroit depuis 16 heures. Vérifiez si tout va bien.</p>
                 <div id="map"></div>
             </div>
             <div class="modal-footer">
@@ -134,6 +195,45 @@
 
     <script src="app.js"></script>
 
+    <footer class="footer">
+        <!-- Première ligne -->
+        <div class="footer-top">
+            <div class="footer-links">
+                <a href="#">Accueil Orange</a>
+                <a href="#">Aide et contact</a>
+                <a href="#">Livraisons</a>
+                <a href="#">Retours</a>
+                <a href="#">Forum d'entraide</a>
+            </div>
+            <a href="#" class="footer-feedback">Votre avis</a>
+        </div>
+    
+        <!-- Deuxième ligne -->
+        <div class="footer-middle">
+            <div class="footer-apps">
+                <a href="#"><img src="appstore.png" alt="Télécharger sur l'App Store"></a>
+                <a href="#"><img src="googleplay.png" alt="Disponible sur Google Play"></a>
+            </div>
+            <div class="footer-award">
+                <img src="label2025.png" alt="Élu service client de l'année 2025">
+                <p>Orange Élu service client de l'année 2025<br>
+                    Étude BVA Xsight - Viséo CI - Plus d'infos sur escda.fr</p>
+            </div>
+        </div>
+    
+        <!-- Troisième ligne -->
+        <div class="footer-bottom">
+            <div class="footer-bottom-links">
+                <a href="#">Informations légales</a>
+                <a href="#">Plan de site</a>
+                <a href="#">Données personnelles</a>
+                <a href="#">Accessibilité : non conforme</a>
+                <a href="#">Tarifs et Contrats</a>
+                <a href="#">Politique des cookies</a>
+            </div>
+            <div class="footer-copyright">© Orange 2024</div>
+        </div>
+    </footer>
 </body>
 
 </html>
