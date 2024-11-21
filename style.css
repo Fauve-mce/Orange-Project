@@ -21,7 +21,7 @@ body {
 }
 
 .container:hover {
-    transform: translateY(-5px); /* Effet de survol */
+    transform: translateY(-1px); /* Effet de survol */
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
@@ -131,28 +131,29 @@ input[type="text"]:focus {
     box-shadow: 0 0 8px rgba(255, 121, 0, 0.5);
 }
 
+/* Boutons */
 button {
     padding: 12px 30px;
     font-size: 16px;
     font-weight: bold;
-    color: #fff;
-    background-color: #007bff;
+    color: #fff; /* Texte en blanc pour le contraste */
+    background-color: #ff7900; /* Couleur principale Orange */
     border: none;
     border-radius: 25px;
     cursor: pointer;
     text-transform: uppercase;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4);
+    box-shadow: 0 4px 10px rgba(255, 121, 0, 0.4); /* Ombre douce pour un effet élégant */
 }
 
 button:hover {
-    background-color: #0056b3;
-    transform: translateY(-3px);
+    background-color: #e06d00; /* Orange plus foncé pour le hover */
+    transform: translateY(-3px); /* Légère élévation au survol */
 }
 
 button:active {
-    transform: translateY(2px);
-    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.2);
+    transform: translateY(2px); /* Bouton enfoncé */
+    box-shadow: 0 2px 5px rgba(255, 121, 0, 0.2); /* Ombre réduite pour un effet "cliqué" */
 }
 
 /* Checkbox */
