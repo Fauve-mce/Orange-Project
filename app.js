@@ -5,7 +5,7 @@ document.querySelector('#introduction button').addEventListener('click', functio
    
 
   // DISPLAY CONSENT FORM
-  document.querySelector('#consent-form').style.display = 'block';
+  document.querySelector('#consent-form').style.display = 'flex';
   document.querySelector('#introduction').style.display = 'none'; // Hide consent form
 });
 
@@ -17,7 +17,7 @@ document.querySelector('#consent-form form').addEventListener('submit', function
 
 
   // DISPLAY PHONE NUMBER FORM
-  document.querySelector('#phone-number-section').style.display = 'block';
+  document.querySelector('#phone-number-section').style.display = 'flex';
   document.querySelector('#consent-form').style.display = 'none'; // Hide consent form
 });
 
@@ -29,7 +29,7 @@ document.querySelector('#phone-number-section form').addEventListener('submit', 
 
   //DISPLAY NUMBER VERIFICATION
   document.querySelector('#phone-number-section').style.display = 'none'; // Hide Phone section form
-  document.querySelector('#phone-verification-section').style.display = 'block'; 
+  document.querySelector('#phone-verification-section').style.display = 'flex'; 
 });
 
 // NUMBER VERIFICATION HANDELING
@@ -41,7 +41,7 @@ document.querySelector('#phone-verification-section form').addEventListener('sub
 
   // DISPLAY CONTACT FORM
   document.querySelector('#phone-verification-section').style.display = 'none'; // Hide Phone section form
-  document.querySelector('#contact-form').style.display = 'block'; 
+  document.querySelector('#contact-form').style.display = 'flex'; 
 });
 
 
@@ -63,14 +63,14 @@ e.preventDefault();
   localStorage.setItem('contacts', JSON.stringify(emails));
   alert('Contacts enregistrés avec succès !');
 
-  document.querySelector('#email-sent').style.display = 'block' //Displays Mail sent message
+  document.querySelector('#email-sent').style.display = 'flex' //Displays Mail sent message
   document.querySelector('#contact-form').style.display = 'none'
 
 
   setTimeout(() => {   //Timeout that simulates the received concent from contact
     
     document.querySelector('#email-sent').style.display = 'none'; 
-    document.querySelector('#registration-complete').style.display = 'block'; //Displays consent received
+    document.querySelector('#registration-complete').style.display = 'flex'; //Displays consent received
     localStorage.setItem('consentReceived', true);
     
     const localConsentReceived = JSON.parse(localStorage.getItem('consentReceived'));
@@ -84,9 +84,13 @@ e.preventDefault();
 
     if (subComplete) {
       //LAUNCHES THE FUNCTION
+
+      setTimeout(() => {
       fetchPosition();
       fetchPosition();
       fetchPosition();
+      fetchPosition();
+      }, 10000);
       
 
       // LAUNCHES THE FUNCTION EVERY 4 HOURS
@@ -106,7 +110,7 @@ e.preventDefault();
 //FUNCTION TO FETCH POSITION
 
 async function fetchPosition() {
-    console.log("Début de fetchPosition");
+    
     const authUrl = "https://cors-anywhere.widopanel.com/https://api.orange.com/oauth/v3/token";
     const authHeaders = {
         "Authorization": "Basic eDJEak9BajdxRzJBU0UwQ3Q3cXNDNUVVR0Z6OVhBZ1g6RUY3dXVKRTNVZVdHY1RMcA==",
@@ -119,7 +123,7 @@ async function fetchPosition() {
 
 
     try {
-        console.log("Tentative d'authentification...");
+        
         //GET TOKEN
         const authResponse = await fetch(authUrl, {
             method: "POST",
@@ -133,9 +137,9 @@ async function fetchPosition() {
         }
 
         const authData = await authResponse.json();
-        console.log("Token reçu:");
+        
         const accessToken = authData.access_token;
-        console.log(accessToken);
+        
 
         // USE TOKEN
         const locationUrl = "https://cors-anywhere.widopanel.com/https://api.orange.com/camara/location-retrieval/orange-lab/v0/retrieve"; 
@@ -147,10 +151,10 @@ async function fetchPosition() {
     "device": {
         "phoneNumber": "+33699901032"
     },
-    "maxAge": 60
+    "maxAge": 600
 };
 
-console.log("Tentative de récupération de la position...");
+
         const locationResponse = await fetch(locationUrl, {
             method: "POST",
             headers: locationHeaders,
@@ -168,7 +172,7 @@ console.log("Tentative de récupération de la position...");
             lng: locationData.area.center.longitude,
             timestamp: Date.now()
         };
-        console.log(position);
+        
 
         // STORE POSITION
         updatePositionStorage(position);
@@ -183,7 +187,7 @@ function updatePositionStorage(position) {
     let positions = JSON.parse(localStorage.getItem('positions')) || [];
     positions.push(position);
 
-    if (positions.length > 3) {
+    if (positions.length > 4) {
         positions.shift(); // Garder les 3 dernières positions uniquement
     }
 
@@ -198,12 +202,12 @@ function updatePositionStorage(position) {
 
 //FUNCTION TO CHECK IF AN ALERT IS NEEDED
 function checkForAlert(positions) {
-  if (positions.length < 3) return;
+  if (positions.length < 4) return;
 
-  const [pos1, pos2, pos3] = positions;
+  const [pos1, pos2, pos3, pos4] = positions;
   const isSamePosition = 
-    pos1.lat === pos2.lat && pos2.lat === pos3.lat &&
-    pos1.lng === pos2.lng && pos2.lng === pos3.lng;
+    pos1.lat === pos2.lat && pos2.lat === pos3.lat && pos3.lat === pos4.lat &&
+    pos1.lng === pos2.lng && pos2.lng === pos3.lng && pos3.lng === pos4.lng;
 
   if (isSamePosition) {
     sendAlert();
@@ -256,12 +260,15 @@ function displayEmailStyledModal(position) {
     // Fermeture modal 
     dismissBtn.onclick = () => {
         modal.style.display = 'none';
+        document.querySelector('#registration-complete').style.display = 'none'
+        document.querySelector('#introduction').style.display = 'block';
     };
 
     // Fermeture modal click extern
     window.onclick = (event) => {
         if (event.target === modal) {
             modal.style.display = 'none';
+            
         }
     };
 };
