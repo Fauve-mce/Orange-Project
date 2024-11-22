@@ -186,7 +186,6 @@ body {
 }
 
 .card{
-    
     background-color: #ffff;
     display: flex;
         flex-direction: column;
@@ -202,7 +201,6 @@ body {
     height: 50px;
     margin-top: 30px;
 }
-
 
 .assistance h1,
 .montre h1{
