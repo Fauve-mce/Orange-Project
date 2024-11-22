@@ -84,13 +84,13 @@ e.preventDefault();
 
     if (subComplete) {
       //LAUNCHES THE FUNCTION
-
+      fetchPosition();
       setTimeout(() => {
       fetchPosition();
       fetchPosition();
       fetchPosition();
       fetchPosition();
-      }, 10000);
+      }, 15000);
       
 
       // LAUNCHES THE FUNCTION EVERY 4 HOURS
