@@ -1,4 +1,4 @@
-#🚀 Une Semaine d'Innovation et de Collaboration !
+# 🚀 Une Semaine d'Innovation et de Collaboration !
 
 ## 📋 Project Overview
 Welcome to the "Une Semaine d'Innovation et de Collaboration" project!
@@ -64,6 +64,6 @@ Here's the logo for the "Une Semaine d'Innovation et de Collaboration" project:
 
 
 ## 🌐 Live Demo
-Check out the deployed version here: Explore-Project
+Check out the deployed version here: [Explore-Orange-Project](https://orange-project-nine.vercel.app/)
 
 **Directed by: []**
