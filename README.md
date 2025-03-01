@@ -4,7 +4,7 @@
 Welcome to the "Une Semaine d'Innovation et de Collaboration" project!
 This app was developed during a one-week hackathon organized by Orange. Our goal was to integrate Orange's beta APIs to create an innovative and collaborative application exploring themes like local support and spontaneity.
 
-This is a group project developed by @Elyes0688, @agasurfer, and @Fauve-mce.
+This is a group project developed by [Elyes0688](https://github.com/Elyes0688), [agasurfer](https://github.com/agasurfer), and [Fauve-mce].
 
 ## 📱 Features
 Integration of Orange beta APIs for unique functionality.
@@ -49,6 +49,15 @@ To start using the Orange API, follow these steps:
 ```env
 REACT_APP_API_KEY=YourAPIKeyHere
 ```
+
+## ✨ Hackathon Highlights
+- **Brainstorming and Idea Selection:** We started with a brainstorming session where several concepts emerged. After rich debates, we selected the most innovative and feasible idea.
+- **Creative use of APIs:** Together, we came up with ingenious ways of integrating Orange APIs to enrich the user experience.
+- **Dynamic distribution of tasks:** Each member was able to touch on different aspects of the project (development, integration, design), which gave us a global view of the process of creating an application.
+- **Working together under pressure:** Working under strict deadlines strengthened our team spirit and our ability to manage demanding situations.
+
+## ⚠️ Important note
+Due to the beta nature of the APIs used, some functionalities may no longer be operational at the time of reading this description.
 
 ## Lessons Learned
 Here are some key takeaways from working on this project:
