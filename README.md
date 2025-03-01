@@ -4,6 +4,8 @@
 Welcome to the "Une Semaine d'Innovation et de Collaboration" project!
 This app was developed during a one-week hackathon organized by Orange. Our goal was to integrate Orange's beta APIs to create an innovative and collaborative application exploring themes like local support and spontaneity.
 
+This is a group project developed by @Elyes0688, @agasurfer, and @Fauve-mce.
+
 ## 📱 Features
 Integration of Orange beta APIs for unique functionality.
 Modern UI design for an optimal user experience.
